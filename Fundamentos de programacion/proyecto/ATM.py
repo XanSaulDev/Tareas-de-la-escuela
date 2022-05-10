@@ -25,12 +25,12 @@ def ATM():
                     print("\nNo puedes depositar una cantidad negativa")
             elif op == 3:
                 amount=float(input("\nCuanto deseas retirar: "))
-                if amount <= bal or amount <= 0:
+                if amount > bal or amount < 0:
+                    print("No hay suficiente saldo")
+                else:
                     bal -= amount
                     print(f"----------Tu saldo es: {bal}------------")
                     movs.append("Retiro $"+str(amount))
-                else:
-                    print("No hay suficiente saldo")
             elif op == 4:
                 print(*movs, end="\n")
             elif op == 5:
